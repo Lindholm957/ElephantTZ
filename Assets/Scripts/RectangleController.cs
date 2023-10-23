@@ -22,7 +22,7 @@ public class RectangleController : MonoBehaviour
         if (Input.GetMouseButtonDown (0) | Input.touchCount == 1) {
             Vector2 pos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(pos), Vector2.zero);
-            if (hitInfo.transform.gameObject == _collider.gameObject)
+            if (hitInfo.collider == _collider)
             {
                 _action.Invoke();
             }
